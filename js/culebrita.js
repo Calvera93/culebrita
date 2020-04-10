@@ -58,7 +58,7 @@ class Comida extends objeto {
         this.y = this.generar();
     }
     generar() {
-        var num = Math.floor(Math.random() * 50) * 10
+        var num = Math.floor(Math.random() * 29) * 10
         return num
     }
     colocar() {
