@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Culebrita</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body onkeydown="teclado(event)">
-    <header style="background-color: blue; width: 100%;"><h2>Culebrita</h2></header>
-    <div > <h3 id="contador"></h3> <canvas id=lienzo width="600" height="600"></canvas> </div>
-    
+    <header style="background-color: blue; width: 100%;">
+        <h2>Culebrita</h2>
+    </header>
+    <div>
+        <h3 id="contador"></h3> <canvas id=lienzo width="300" height="300"></canvas>
+    </div>
+    <div class="botones">
+        <button onclick="direccion(1)">Arr</button> 
+        <button onclick="direccion(4)">Der</button> 
+        <button onclick="direccion(3)">Izq</button> 
+        <button onclick="direccion(2)">Abj</button> 
+    </div>
+
     <script src="js/culebrita.js"></script>
 </body>
+
 </html>

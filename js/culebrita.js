@@ -71,7 +71,7 @@ class Comida extends objeto {
     }
 }
 //objetos del juego 
-var cabeza = new Cola(300, 300)
+var cabeza = new Cola(140, 140)
 var comida = new Comida();
 var ejex = true;
 var ejey = true;
@@ -89,7 +89,7 @@ function gameover() {
     direccionX = 0;
     ejey = true
     ejex = true
-    cabeza = new Cola(300, 300)
+    cabeza = new Cola(140, 140)
     comida = new Comida()
     this.contador=0
     document.getElementById("contador").innerHTML="Game over"
@@ -97,15 +97,15 @@ function gameover() {
 
 function choquepared() {
     if (cabeza.x < 0) {
-        cabeza.x = 590
+        cabeza.x = 290
     }
-    if (cabeza.x > 590) {
+    if (cabeza.x > 290) {
         cabeza.x = 0
     }
     if (cabeza.y < 0) {
-        cabeza.y = 590
+        cabeza.y = 290
     }
-    if (cabeza.y > 590) {
+    if (cabeza.y > 290) {
         cabeza.y = 0
     }
 
@@ -159,6 +159,38 @@ function teclado(event) {
         }
     }
 }
+function direccion(i) {
+    if (ejex) {
+        if (i == 1) {
+            direccionY = -tamanho;
+            direccionX = 0;
+            ejex = false;
+            ejey = true;
+            
+        }
+        if (i == 2) {
+            direccionY = tamanho;
+            direccionX = 0;
+            ejex = false;
+            ejey = true;
+        }
+    }
+    if (ejey) {
+        if (i == 3) {
+            direccionY = 0;
+            direccionX = -tamanho;
+            ejey = false;
+            ejex = true;
+        }
+        if (i == 4) {
+            direccionX = tamanho;
+            direccionY = 0;
+            ejex = true;
+            ejey = false;
+        }
+    }
+}
+
 
 function dibujar() {
     var lienzo = document.getElementById("lienzo");
